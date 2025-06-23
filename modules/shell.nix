@@ -7,8 +7,10 @@
       fd
       du-dust
       dua
+      kondo
 
-      rusty-man
+      wiki-tui
+      ncspot
   ];
 
 
