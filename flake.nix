@@ -1,6 +1,4 @@
 {
-  description = "Home Manger Configuration";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
 
