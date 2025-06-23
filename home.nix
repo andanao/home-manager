@@ -4,6 +4,9 @@ let
 in {
 
   nixpkgs.config.allowUnfree = true;
+  imports = [
+    ./modules
+  ];
 
   home = {
     inherit username;
