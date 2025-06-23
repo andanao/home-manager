@@ -7,12 +7,10 @@
       fd
       du-dust
       dua
+
+      rusty-man
   ];
 
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 
   programs.eza = {
     enable = true;
@@ -22,14 +20,25 @@
     enableZshIntegration = true;
   };
 
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
   };
 
+
   home.shellAliases = {
       ls = "eza";
-      cd = "z"
+      cd = "z";
       grep = "rg";
 
       ll = "ls -l";
