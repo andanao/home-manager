@@ -2,26 +2,34 @@
 let
   username = "adrian";
 in {
-  home = {
-    packages = with pkgs; [
-      cowsay
-    ];
 
+  nixpkgs.config.allowUnfree = true;
+
+  home = {
     inherit username;
     homeDirectory = "/home/${username}";
 
+    packages = with pkgs; [
+      discord
+    ];
+
     stateVersion = "24.11";
+  };
 
-    file = {
-      "hello.txt" = {
-        text =''
-          #!/usr/bin/env bash
+  programs.home-manager.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "Adrian Danao-Schroeder";
+    userEmail = "adriandanao@gmail.com";
 
-          echo "Hello, ${username}!"
-          echo '*slaps roof* This script can fit so many lines in it'
-        '';
-        executable = true;
-      };
+    extraConfig = {
+      init.defaultBranch = "main";
+      pull.rebase = true;
+    };
+
+    aliases = {
+      amend = "commit --amend";
+      oops = "commit -a --amend --no-edit";
     };
   };
 }
