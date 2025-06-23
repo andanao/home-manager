@@ -5,6 +5,8 @@
       ripgrep-all
       bat
       fd
+      du-dust
+      dua
   ];
 
   programs.starship = {
@@ -20,8 +22,14 @@
     enableZshIntegration = true;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home.shellAliases = {
-      ls = "eza"
+      ls = "eza";
+      cd = "z"
       grep = "rg";
 
       ll = "ls -l";
@@ -44,6 +52,7 @@
       weather = "(){ curl -s v2.wttr.in/$1 }";
 
       nsp = "nix-shell -p --run $SHELL";
+      nspk = "nix searcch nixpkgs";
 
       nurse = "sudo nixos-rebuild switch --flake ~/nix/";
       horse = "home-manager switch --flake ~/home-manager#adrian";
