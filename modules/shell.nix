@@ -1,7 +1,52 @@
 { pkgs, lib, config,  ... }: {
+
+  home.packages = with pkgs; [
+      ripgrep
+      ripgrep-all
+      bat
+      fd
+  ];
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    colors = "always";
+    git = true;
+    icons = "auto";
+    enableZshIntegration = true;
+  };
+
+  home.shellAliases = {
+      ls = "eza"
+      grep = "rg";
+
+      ll = "ls -l";
+      la = "ls -la";
+      "..." = "cd ../..";
+
+
+      gs = "git status";
+      glog="git log --pretty=\"%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s\" --date=short";
+      glogs="glog -5";
+
+      jkn = "cd ~/nix";
+      jkh = "cd ~/home-manager";
+      jkd = "cd ~/Downloads";
+      jkl = "~/git";
+      jko = "~/git/org";
+      jke = "~/git/emacs";
+
+
+      weather = "(){ curl -s v2.wttr.in/$1 }";
+
+      nsp = "nix-shell -p --run $SHELL";
+
+      nurse = "sudo nixos-rebuild switch --flake ~/nix/";
+      horse = "home-manager switch --flake ~/home-manager#adrian";
   };
 
   programs.zsh = {
@@ -19,24 +64,6 @@
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
 
-    shellAliases = {
-      ll = "ls -l";
-      la = "ls -la";
-
-      gs = "git status";
-      glog="git log --pretty=\"%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s\" --date=short";
-      glogs="glog -5";
-
-      jkn = "cd ~/nix";
-      jkh = "cd ~/home-manager";
-      jkd = "cd ~/Downloads";
-      jkl = "~/git";
-      jko = "~/git/org";
-      jke = "~/git/emacs";
-
-      nurse = "sudo nixos-rebuild switch --flake ~/nix/";
-      horse = "home-manager switch --flake ~/home-manager#adrian";
-    };
   };
 
 }
