@@ -50,7 +50,7 @@
 
       gs = "git status";
       glog="git log --pretty=\"%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s\" --date=short";
-      glogs="glog -5";
+      glogs="glog -3";
 
       jkn = "cd ~/nix";
       jkh = "cd ~/home-manager";
@@ -63,10 +63,10 @@
       weather = "(){ curl -s v2.wttr.in/$1 }";
 
       nsp = "nix-shell -p --run $SHELL";
-      nspk = "nix searcch nixpkgs";
+      nspk = "nix search nixpkgs";
 
       nurse = "sudo nixos-rebuild switch --flake ~/nix/";
-      horse = "home-manager switch --flake ~/home-manager#adrian";
+      horse = "home-manager switch --flake ~/home-manager#adrian -b backup";
   };
 
   programs.zsh = {

@@ -19,6 +19,11 @@ in {
     stateVersion = "24.11";
   };
 
+  home.keyboard = {
+    layout = "us";
+    options = [ "ctrl:nocaps" ];
+  };
+
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;

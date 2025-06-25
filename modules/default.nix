@@ -2,5 +2,6 @@
   imports = [
     ./shell.nix
     ./rust.nix
+    ./hyprland.nix
   ];
 }
