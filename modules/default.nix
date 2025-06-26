@@ -3,5 +3,6 @@
     ./shell.nix
     ./rust.nix
     ./hyprland.nix
+    ./python.nix
   ];
 }
