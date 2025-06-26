@@ -1,8 +1,9 @@
 { pkgs, ... }: {
   home.packages = with pkgs;
     [
-      (python3.withPackages (python-pkgs:
+      (python312.withPackages (python-pkgs:
         with python-pkgs; [
+          pip
           pandas
           requests
           numpy

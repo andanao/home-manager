@@ -13,7 +13,7 @@ in {
     homeDirectory = "/home/${username}";
 
     packages = with pkgs; [
-      nixfmt
+      nixfmt-rfc-style
       discord
     ];
 
