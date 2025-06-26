@@ -1,7 +1,8 @@
 { lib, pkgs, ... }:
 let
   username = "adrian";
-in {
+in
+{
 
   nixpkgs.config.allowUnfree = true;
   imports = [

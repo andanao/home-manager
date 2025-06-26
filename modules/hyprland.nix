@@ -28,6 +28,6 @@
 
     extraConfig = ''
       ${builtins.readFile ../dotfiles/hyprland.conf}
-      '';
+    '';
   };
 }
